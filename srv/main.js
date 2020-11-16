@@ -1,8 +1,9 @@
 import cors from 'cors';
 import express from 'express';
 import { nanoid } from 'nanoid';
-import { messages } from '../db/messages.js'
-import { users } from '../db/users.js'
+import { messages } from '../db/messages.js';
+import { users } from '../db/users.js';
+import Router from './routes.js'
 
 const server = express(),
       { HOST, PORT } = process.env; //const { PORT } = process.env; // process.env.PORT
@@ -72,5 +73,7 @@ server.post( '/message', (req, res) => {
 
   return res.send(message)
 })
+
+server.use(Router)
 
 server.listen( PORT, HOST, () => console.log(`App listening on port http://${HOST}:${PORT}!`));
