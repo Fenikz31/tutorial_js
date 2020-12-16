@@ -1,5 +1,5 @@
 import express from 'express'
-import { pool } from '../db/mysql.js';
+import { pool } from '../db/mysql.js'
 
 const router = express.Router();
 
